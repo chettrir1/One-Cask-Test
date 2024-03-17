@@ -1,0 +1,21 @@
+package com.raju.onecask.domain.model
+
+data class CollectionModel(
+    val id: Int,
+    val collectionName: String,
+    val bottles: String,
+    val product: ProductModel
+)
+
+data class ProductModel(
+    val productId: Int,
+    val name: String,
+    val age: String,
+    val code: String,
+    val details: List<ProductDetailModel>
+)
+
+data class ProductDetailModel(
+    val title: String,
+    val value: String
+)
