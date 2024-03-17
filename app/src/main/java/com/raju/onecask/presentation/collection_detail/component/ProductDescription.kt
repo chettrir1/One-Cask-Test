@@ -258,6 +258,15 @@ fun Tabs(viewModel: CollectionViewModel) {
                 Spacer(modifier = Modifier.height(16.dp))
             }
 
+            2 -> Column(
+                modifier = Modifier
+                    .padding(vertical = 16.dp)
+            ) {
+                HistoryItem()
+                HistoryItem()
+                HistoryItem()
+            }
+
         }
     }
     Spacer(modifier = Modifier.height(16.dp))
