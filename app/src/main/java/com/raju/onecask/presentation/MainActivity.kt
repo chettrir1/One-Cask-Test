@@ -18,6 +18,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
@@ -68,7 +72,9 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                 ) {
+                    var selectedNav by remember { mutableIntStateOf(0) }
                     Scaffold(
+
                         topBar = {
                             TopAppBar(
                                 colors = TopAppBarDefaults.smallTopAppBarColors(
@@ -77,7 +83,23 @@ class MainActivity : ComponentActivity() {
                                 ),
                                 title = {
                                     Text(
-                                        "My collection",
+                                        when (selectedNav) {
+                                            0 -> {
+                                                "Scan"
+                                            }
+
+                                            1 -> {
+                                                "My Collection"
+                                            }
+
+                                            2 -> {
+                                                "Shop"
+                                            }
+
+                                            else -> {
+                                                "Setting"
+                                            }
+                                        },
                                         fontFamily = FontFamily(Font(R.font.eb_garamond)),
                                         fontSize = 32.sp,
                                         fontWeight = FontWeight.W500,
@@ -96,7 +118,14 @@ class MainActivity : ComponentActivity() {
                             )
                         },
                         bottomBar = {
-                            BottomAppBar { BottomNavigationBar(navController = navController) }
+                            BottomAppBar {
+                                BottomNavigationBar(
+                                    navController = navController,
+                                    onItemClick = {
+                                        selectedNav = it
+                                    }
+                                )
+                            }
                         },
                     ) { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {

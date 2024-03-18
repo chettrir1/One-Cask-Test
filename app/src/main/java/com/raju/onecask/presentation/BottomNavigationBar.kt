@@ -25,7 +25,10 @@ import com.raju.onecask.ui.theme.COLOR_899194
 import com.raju.onecask.ui.theme.COLOR_FFFFFF
 
 @Composable
-fun BottomNavigationBar(navController: NavHostController) {
+fun BottomNavigationBar(
+    navController: NavHostController,
+    onItemClick: (Int) -> Unit
+) {
     val navItems = listOf(NavItem.Scan, NavItem.Collection, NavItem.Shop, NavItem.Setting)
     var selectedItem by rememberSaveable { mutableIntStateOf(0) }
     NavigationBar(containerColor = COLOR_0B1519) {
@@ -56,6 +59,7 @@ fun BottomNavigationBar(navController: NavHostController) {
                 selected = selectedItem == index,
                 onClick = {
                     selectedItem = index
+                    onItemClick(selectedItem)
                     navController.navigate(item.path.lowercase()) {
                         navController.graph.startDestinationRoute?.let { route ->
                             popUpTo(route) { saveState = true }
