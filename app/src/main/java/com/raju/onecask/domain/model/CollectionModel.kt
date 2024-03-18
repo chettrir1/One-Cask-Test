@@ -4,7 +4,6 @@ data class CollectionModel(
     val id: Int,
     val collectionName: String,
     val bottles: String,
-    val product: ProductModel
 )
 
 data class ProductModel(
@@ -12,10 +11,29 @@ data class ProductModel(
     val name: String,
     val age: String,
     val code: String,
-    val details: List<ProductDetailModel>
+    val bottles: String,
+    val details: List<ProductDetailModel>? = null,
+    val notes: ProductTastingNoteModel,
+    val label: List<ProductLabelModel>
 )
 
 data class ProductDetailModel(
     val title: String,
     val value: String
+)
+
+data class ProductTastingNoteModel(
+    val noteBy: String,
+    val notes: List<ProductTastingNoteListModel>? = null
+)
+
+data class ProductTastingNoteListModel(
+    val notesId: Int,
+    val notesTitle: String,
+    val notesDescription: String
+)
+
+data class ProductLabelModel(
+    val title: String,
+    val description: String
 )

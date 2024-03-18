@@ -7,391 +7,637 @@
       "productId": 1,
       "name": "Talisker",
       "age": "18 Year old",
-      "code": "#2504",
+      "code": "#2501",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 2,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 2,
+      "name": "Talisker",
+      "age": "18 Year old",
+      "code": "#2502",
+      "details": [
+        {
+          "detail_id": 1,
+          "title": "Distillery",
+          "value": "Text"
+        },
+        {
+          "detail_id": 2,
+          "title": "Region",
+          "value": "Text"
+        },
+        {
+          "detail_id": 3,
+          "title": "Country",
+          "value": "Text"
+        },
+        {
+          "detail_id": 4,
+          "title": "Type",
+          "value": "Text"
+        },
+        {
+          "detail_id": 5,
+          "title": "Age statement",
+          "value": "Text"
+        },
+        {
+          "detail_id": 6,
+          "title": "Filled",
+          "value": "Text"
+        },
+        {
+          "detail_id": 7,
+          "title": "Bottled",
+          "value": "Text"
+        },
+        {
+          "detail_id": 7,
+          "title": "Cask number",
+          "value": "Text"
+        },
+        {
+          "detail_id": 8,
+          "title": "ABV",
+          "value": "Text"
+        },
+        {
+          "detail_id": 9,
+          "title": "Size",
+          "value": "Text"
+        },
+        {
+          "detail_id": 10,
+          "title": "Finish",
+          "value": "Text"
+        },
+        {
+          "detail_id": 11,
+          "title": "Finish",
+          "value": "Text"
+        }
+      ],
+      "tastingNotes": {
+        "tastingNoteId": 2,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
+      },
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
+    },
+    "name": "Talisker 18 Year old #2504"
+  },
+  {
+    "id": 3,
+    "collectionName": "Springbank 1992 #1234",
+    "bottles": "(112/158)",
+    "product": {
+      "productId": 3,
+      "name": "Talisker",
+      "age": "18 Year old",
+      "code": "#2503",
+      "details": [
+        {
+          "detail_id": 1,
+          "title": "Distillery",
+          "value": "Text"
+        },
+        {
+          "detail_id": 2,
+          "title": "Region",
+          "value": "Text"
+        },
+        {
+          "detail_id": 3,
+          "title": "Country",
+          "value": "Text"
+        },
+        {
+          "detail_id": 4,
+          "title": "Type",
+          "value": "Text"
+        },
+        {
+          "detail_id": 5,
+          "title": "Age statement",
+          "value": "Text"
+        },
+        {
+          "detail_id": 6,
+          "title": "Filled",
+          "value": "Text"
+        },
+        {
+          "detail_id": 7,
+          "title": "Bottled",
+          "value": "Text"
+        },
+        {
+          "detail_id": 7,
+          "title": "Cask number",
+          "value": "Text"
+        },
+        {
+          "detail_id": 8,
+          "title": "ABV",
+          "value": "Text"
+        },
+        {
+          "detail_id": 9,
+          "title": "Size",
+          "value": "Text"
+        },
+        {
+          "detail_id": 10,
+          "title": "Finish",
+          "value": "Text"
+        },
+        {
+          "detail_id": 11,
+          "title": "Finish",
+          "value": "Text"
+        }
+      ],
+      "tastingNotes": {
+        "tastingNoteId": 3,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
+      },
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
+    },
+    "name": "Talisker 18 Year old #2504"
+  },
+  {
+    "id": 4,
+    "collectionName": "Springbank 1992 #1234",
+    "bottles": "(112/158)",
+    "product": {
+      "productId": 4,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 4,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 5,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 5,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 5,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 6,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 6,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 6,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
-      "label": {
-      }
-    },
-    "name": "Talisker 18 Year old #2504"
-  },
-  {
-    "id": 1,
-    "collectionName": "Springbank 1992 #1234",
-    "bottles": "(112/158)",
-    "product": {
-      "productId": 1,
-      "name": "Talisker",
-      "age": "18 Year old",
-      "code": "#2504",
-      "details": [
+      "label": [
         {
-          "title": "Distillery",
-          "value": "Text"
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
         },
         {
-          "title": "Region",
-          "value": "Text"
-        },
-        {
-          "title": "Country",
-          "value": "Text"
-        },
-        {
-          "title": "Type",
-          "value": "Text"
-        },
-        {
-          "title": "Age statement",
-          "value": "Text"
-        },
-        {
-          "title": "Filled",
-          "value": "Text"
-        },
-        {
-          "title": "Bottled",
-          "value": "Text"
-        },
-        {
-          "title": "Cask number",
-          "value": "Text"
-        },
-        {
-          "title": "ABV",
-          "value": "Text"
-        },
-        {
-          "title": "Size",
-          "value": "Text"
-        },
-        {
-          "title": "Finish",
-          "value": "Text"
-        },
-        {
-          "title": "Finish",
-          "value": "Text"
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
         }
-      ],
-      "tastingNotes": {
-      },
-      "label": {
-      }
-    },
-    "name": "Talisker 18 Year old #2504"
-  },
-  {
-    "id": 1,
-    "collectionName": "Springbank 1992 #1234",
-    "bottles": "(112/158)",
-    "product": {
-      "productId": 1,
-      "name": "Talisker",
-      "age": "18 Year old",
-      "code": "#2504",
-      "details": [
-        {
-          "title": "Distillery",
-          "value": "Text"
-        },
-        {
-          "title": "Region",
-          "value": "Text"
-        },
-        {
-          "title": "Country",
-          "value": "Text"
-        },
-        {
-          "title": "Type",
-          "value": "Text"
-        },
-        {
-          "title": "Age statement",
-          "value": "Text"
-        },
-        {
-          "title": "Filled",
-          "value": "Text"
-        },
-        {
-          "title": "Bottled",
-          "value": "Text"
-        },
-        {
-          "title": "Cask number",
-          "value": "Text"
-        },
-        {
-          "title": "ABV",
-          "value": "Text"
-        },
-        {
-          "title": "Size",
-          "value": "Text"
-        },
-        {
-          "title": "Finish",
-          "value": "Text"
-        },
-        {
-          "title": "Finish",
-          "value": "Text"
-        }
-      ],
-      "tastingNotes": {
-      },
-      "label": {
-      }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   }

@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,19 +22,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.raju.onecask.R
-import com.raju.onecask.presentation.collection.CollectionViewModel
 import com.raju.onecask.presentation.collection_detail.component.GenuineDropDown
 import com.raju.onecask.presentation.collection_detail.component.ProductDescription
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CollectionDetailScreen(
     modifier: Modifier,
-    viewModel: CollectionViewModel = hiltViewModel()
+    viewModel: CollectionDetailViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-    Box(modifier = modifier) {
-        state.collection.let { collection ->
+    Box(modifier = modifier.fillMaxSize()) {
+        state.product.let { product ->
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -53,7 +50,7 @@ fun CollectionDetailScreen(
                             .fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(24.dp))
-                    ProductDescription()
+                    ProductDescription(product)
                 }
             }
         }

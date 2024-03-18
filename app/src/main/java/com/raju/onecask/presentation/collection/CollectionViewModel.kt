@@ -23,6 +23,14 @@ class CollectionViewModel @Inject constructor(
         getCollection()
     }
 
+    fun onEvent(event: CollectionEvent) {
+        when (event) {
+            is CollectionEvent.Refresh -> {
+                getCollection()
+            }
+        }
+    }
+
     private fun getCollection() {
         useCase().onEach { result ->
             when (result) {

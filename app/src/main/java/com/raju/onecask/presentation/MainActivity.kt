@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,6 +19,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
@@ -28,6 +33,7 @@ import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -45,6 +51,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val viewModel: MainViewModel by viewModels()
+
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge(
@@ -62,13 +70,21 @@ class MainActivity : ComponentActivity() {
             )
         )
         super.onCreate(savedInstanceState)
+        actionBar?.hide()
+        installSplashScreen().apply {
+            setKeepOnScreenCondition {
+                viewModel.isLoading.value
+            }
+        }
         setContent {
             OneCaskTheme {
                 val navController = rememberNavController()
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                 ) {
+                    var selectedNav by remember { mutableIntStateOf(1) }
                     Scaffold(
+
                         topBar = {
                             TopAppBar(
                                 colors = TopAppBarDefaults.smallTopAppBarColors(
@@ -77,7 +93,23 @@ class MainActivity : ComponentActivity() {
                                 ),
                                 title = {
                                     Text(
-                                        "My collection",
+                                        when (selectedNav) {
+                                            0 -> {
+                                                "Scan"
+                                            }
+
+                                            1 -> {
+                                                "My Collection"
+                                            }
+
+                                            2 -> {
+                                                "Shop"
+                                            }
+
+                                            else -> {
+                                                "Setting"
+                                            }
+                                        },
                                         fontFamily = FontFamily(Font(R.font.eb_garamond)),
                                         fontSize = 32.sp,
                                         fontWeight = FontWeight.W500,
@@ -96,15 +128,24 @@ class MainActivity : ComponentActivity() {
                             )
                         },
                         bottomBar = {
-                            BottomAppBar { BottomNavigationBar(navController = navController) }
+                            BottomAppBar {
+                                BottomNavigationBar(
+                                    navController = navController,
+                                    onItemClick = {
+                                        selectedNav = it
+                                    }
+                                )
+                            }
                         },
                     ) { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
-                            NavHost(navController, startDestination = NavItem.Scan.path) {
+                            NavHost(
+                                navController, startDestination = NavItem.Collection.path
+                            ) {
                                 composable(NavItem.Scan.path) { ScanScreen() }
                                 composable(NavItem.Collection.path) {
                                     CollectionScreen(onItemClick = {
-                                        start(context = this@MainActivity)
+                                        start(context = this@MainActivity, it)
                                     })
                                 }
                                 composable(NavItem.Shop.path) { ShopScreen() }

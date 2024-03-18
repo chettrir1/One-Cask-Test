@@ -45,9 +45,8 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.raju.onecask.R
-import com.raju.onecask.presentation.collection.CollectionViewModel
+import com.raju.onecask.domain.model.ProductModel
 import com.raju.onecask.ui.theme.COLOR_0B1519
 import com.raju.onecask.ui.theme.COLOR_111c20
 import com.raju.onecask.ui.theme.COLOR_122329
@@ -58,7 +57,7 @@ import com.raju.onecask.ui.theme.COLOR_FFFFFF
 
 @Composable
 fun ProductDescription(
-    viewModel: CollectionViewModel = hiltViewModel()
+    product: ProductModel?
 ) {
     Box(
         modifier = Modifier
@@ -70,7 +69,7 @@ fun ProductDescription(
             modifier = Modifier.fillMaxSize(),
         ) {
             Text(
-                "Bottle 135/184",
+                "Bottle ${product?.bottles}",
                 fontFamily = FontFamily(Font(R.font.lato)),
                 fontSize = 12.sp,
                 fontWeight = FontWeight.W400,
@@ -83,13 +82,13 @@ fun ProductDescription(
             Text(
                 buildAnnotatedString {
                     withStyle(style = SpanStyle(color = COLOR_E7E9EA)) {
-                        append("Talisker ")
+                        append("${product?.name} ")
                     }
                     withStyle(style = SpanStyle(color = COLOR_D49A00)) {
-                        append("18 Year old\n")
+                        append("${product?.age}\n")
                     }
                     withStyle(style = SpanStyle(color = COLOR_E7E9EA)) {
-                        append("#2504")
+                        append(product?.code)
                     }
                 },
                 fontWeight = FontWeight.W500,
@@ -101,7 +100,7 @@ fun ProductDescription(
                 letterSpacing = TextUnit(0.4F, TextUnitType.Sp)
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Tabs(viewModel)
+            Tabs(product)
 
         }
     }
@@ -109,8 +108,7 @@ fun ProductDescription(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Tabs(viewModel: CollectionViewModel) {
-    val state = viewModel.state.value
+fun Tabs(product: ProductModel?) {
 
     val tabItems = listOf(
         TabItem(title = "Details"),
@@ -179,6 +177,7 @@ fun Tabs(viewModel: CollectionViewModel) {
     }
     HorizontalPager(
         state = pagerState,
+        verticalAlignment = Alignment.Top,
         modifier = Modifier
             .fillMaxWidth()
     ) { index ->
@@ -188,7 +187,7 @@ fun Tabs(viewModel: CollectionViewModel) {
                     .padding(vertical = 16.dp)
                     .fillMaxWidth()
             ) {
-                state.collection[0].product.details.forEach {
+                product?.details?.forEach {
                     DetailItem(model = it)
                 }
             }
@@ -217,7 +216,7 @@ fun Tabs(viewModel: CollectionViewModel) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "by Charles MacLean MBE",
+                    text = "by ${product?.notes?.noteBy}",
                     fontFamily = FontFamily(Font(R.font.lato)),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.W400,
@@ -226,8 +225,8 @@ fun Tabs(viewModel: CollectionViewModel) {
                     lineHeight = TextUnit(24F, TextUnitType.Sp),
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-                state.collection[0].product.details.forEach {
-                    TestingNotesItem()
+                product?.notes?.notes?.forEach {
+                    TestingNotesItem(it)
                 }
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
@@ -252,10 +251,19 @@ fun Tabs(viewModel: CollectionViewModel) {
                     )
                 }
                 Spacer(modifier = Modifier.height(12.dp))
-                state.collection[0].product.details.forEach {
-                    TestingNotesItem()
+                product?.notes?.notes?.forEach {
+                    TestingNotesItem(it)
                 }
                 Spacer(modifier = Modifier.height(16.dp))
+            }
+
+            2 -> Column(
+                modifier = Modifier
+                    .padding(vertical = 16.dp)
+            ) {
+               product?.label?.forEach {
+                   HistoryItem(it)
+               }
             }
 
         }

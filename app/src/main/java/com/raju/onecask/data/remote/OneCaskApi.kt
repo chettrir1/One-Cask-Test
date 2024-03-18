@@ -1,4 +1,4 @@
-package com.example.cleanarchitecture.data.remote
+package com.raju.onecask.data.remote
 
 interface OneCaskApi {
 
