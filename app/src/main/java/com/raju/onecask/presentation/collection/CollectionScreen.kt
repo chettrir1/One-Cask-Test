@@ -18,6 +18,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.raju.onecask.R
 import com.raju.onecask.presentation.collection.component.CollectionItem
 import com.raju.onecask.ui.theme.COLOR_E7E9EA
@@ -27,15 +29,27 @@ fun CollectionScreen(
     onItemClick: () -> Unit,
     viewModel: CollectionViewModel = hiltViewModel()
 ) {
+
+    val swipeRefreshState = rememberSwipeRefreshState(
+        isRefreshing = viewModel.state.value.isRefreshing
+    )
     val state = viewModel.state.value
+
     Box(modifier = Modifier.fillMaxSize()) {
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2)
+        SwipeRefresh(
+            state = swipeRefreshState,
+            onRefresh = {
+                viewModel.onEvent(CollectionEvent.Refresh)
+            }
         ) {
-            items(state.collection) { collection ->
-                CollectionItem(collection = collection, onItemClick = {
-                    onItemClick()
-                })
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2)
+            ) {
+                items(state.collection) { collection ->
+                    CollectionItem(collection = collection, onItemClick = {
+                        onItemClick()
+                    })
+                }
             }
         }
         if (state.error.isNotBlank()) {

@@ -17,7 +17,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
@@ -43,7 +42,9 @@ fun GenuineDropDown(
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterStart)
             ) {
                 Image(
                     painterResource(id = R.drawable.ic_genuine),
@@ -55,10 +56,9 @@ fun GenuineDropDown(
                     fontFamily = FontFamily(Font(R.font.lato)),
                     fontWeight = FontWeight.W700,
                     color = COLOR_E7E9EA,
-                    textAlign = TextAlign.Start,
                     letterSpacing = TextUnit(0.4F, TextUnitType.Sp),
                     lineHeight = TextUnit(21F, TextUnitType.Sp),
-                    fontSize = 14.sp
+                    fontSize = 14.sp,
                 )
                 Image(
                     painterResource(id = R.drawable.ic_drop_down),

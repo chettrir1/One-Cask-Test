@@ -1,10 +1,10 @@
-package com.example.cleanarchitecture.di
+package com.raju.onecask.di
 
 import android.app.Application
-import com.example.cleanarchitecture.data.remote.OneCaskApi
+import androidx.room.Room
 import com.raju.onecask.common.Constants
-import com.raju.onecask.data.repository.CollectionRepositoryImpl
-import com.raju.onecask.domain.repository.CollectionRepository
+import com.raju.onecask.data.local.OneCaskDatabase
+import com.raju.onecask.data.remote.OneCaskApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +19,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesPaprikaApi(): OneCaskApi {
+    fun providesOneCaskApi(): OneCaskApi {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -29,7 +29,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesCoinRepository(application: Application, api: OneCaskApi): CollectionRepository {
-        return CollectionRepositoryImpl(application, api)
+    fun provideOneCaskDatabase(app: Application): OneCaskDatabase {
+        return Room.databaseBuilder(
+            app,
+            OneCaskDatabase::class.java,
+            "one_cask.db"
+        ).build()
     }
 }

@@ -23,8 +23,19 @@ class CollectionViewModel @Inject constructor(
         getCollection()
     }
 
-    private fun getCollection() {
-        useCase().onEach { result ->
+    fun onEvent(event: CollectionEvent) {
+        when (event) {
+            is CollectionEvent.Refresh -> {
+                getCollection(fetchFromRemote = true)
+            }
+        }
+    }
+
+
+    private fun getCollection(
+        fetchFromRemote: Boolean = true
+    ) {
+        useCase(fetchFromRemote).onEach { result ->
             when (result) {
                 is Resource.Loading -> {
                     _state.value = CollectionListState(isLoading = true)

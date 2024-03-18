@@ -188,9 +188,9 @@ fun Tabs(viewModel: CollectionViewModel) {
                     .padding(vertical = 16.dp)
                     .fillMaxWidth()
             ) {
-                state.collection[0].product.details.forEach {
-                    DetailItem(model = it)
-                }
+//                state.collection[0].product.details.forEach {
+//                    DetailItem(model = it)
+//                }
             }
 
             1 -> Column(
@@ -226,9 +226,9 @@ fun Tabs(viewModel: CollectionViewModel) {
                     lineHeight = TextUnit(24F, TextUnitType.Sp),
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-                state.collection[0].product.details.forEach {
-                    TestingNotesItem()
-                }
+//                state.collection[0].product.details.forEach {
+//                    TestingNotesItem()
+//                }
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -252,9 +252,9 @@ fun Tabs(viewModel: CollectionViewModel) {
                     )
                 }
                 Spacer(modifier = Modifier.height(12.dp))
-                state.collection[0].product.details.forEach {
-                    TestingNotesItem()
-                }
+//                state.collection[0].product.details.forEach {
+//                    TestingNotesItem()
+//                }
                 Spacer(modifier = Modifier.height(16.dp))
             }
 

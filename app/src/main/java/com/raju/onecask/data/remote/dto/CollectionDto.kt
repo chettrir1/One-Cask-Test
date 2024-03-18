@@ -1,15 +1,14 @@
-package com.example.cleanarchitecture.data.remote.dto
+package com.raju.onecask.data.remote.dto
 
 import com.raju.onecask.domain.model.CollectionModel
 import com.raju.onecask.domain.model.ProductDetailModel
 import com.raju.onecask.domain.model.ProductModel
 
-
 data class CollectionDto(
     val id: Int,
     val collectionName: String,
     val bottles: String,
-    val product: ProductDto
+    var product: ProductDto
 )
 
 data class ProductDto(
@@ -17,7 +16,7 @@ data class ProductDto(
     val name: String,
     val age: String,
     val code: String,
-    val details: List<ProductDetailDto>
+    var details: List<ProductDetailDto>? = null
 )
 
 data class ProductDetailDto(
@@ -30,7 +29,7 @@ fun CollectionDto.toCollection(): CollectionModel {
         id = id,
         collectionName = collectionName,
         bottles = bottles,
-        product = product.toProduct()
+        product = product?.toProduct()
     )
 }
 
@@ -40,7 +39,7 @@ fun ProductDto.toProduct(): ProductModel {
         name = name,
         age = age,
         code = code,
-        details = details.map {
+        details = details?.map {
             it.toProductDetail()
         }
     )
