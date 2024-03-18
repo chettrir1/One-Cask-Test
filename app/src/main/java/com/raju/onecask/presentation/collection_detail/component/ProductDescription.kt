@@ -260,9 +260,9 @@ fun Tabs(product: ProductModel?) {
                 modifier = Modifier
                     .padding(vertical = 16.dp)
             ) {
-                HistoryItem()
-                HistoryItem()
-                HistoryItem()
+                for (i in 1..3) {
+                    HistoryItem()
+                }
             }
 
         }

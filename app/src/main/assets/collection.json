@@ -188,8 +188,18 @@
           }
         ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
@@ -285,8 +295,18 @@
           }
         ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
@@ -382,8 +402,18 @@
           }
         ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
@@ -479,8 +509,18 @@
           }
         ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   },
@@ -576,8 +616,18 @@
           }
         ]
       },
-      "label": {
-      }
+      "label": [
+        {
+          "labelId": 1,
+          "title": "Title",
+          "description": "Description\nDescription"
+        },
+        {
+          "labelId": 2,
+          "title": "Title",
+          "description": "Description\nDescription"
+        }
+      ]
     },
     "name": "Talisker 18 Year old #2504"
   }

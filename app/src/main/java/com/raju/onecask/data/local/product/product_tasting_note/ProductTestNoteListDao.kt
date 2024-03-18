@@ -14,7 +14,7 @@ interface ProductTestNoteListDao {
     )
 
     @Query("DELETE FROM product_tasting_notes")
-    suspend fun deleteProductDetail()
+    suspend fun deleteProductTastingNoteList()
 
     @Query(
         """

@@ -103,16 +103,6 @@ fun HistoryItem(
                     lineHeight = TextUnit(16F, TextUnitType.Sp),
                     letterSpacing = TextUnit(0.4F, TextUnitType.Sp),
                 )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    "Description",
-                    fontFamily = FontFamily(Font(R.font.lato)),
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.W400,
-                    color = COLOR_FFFFFF,
-                    lineHeight = TextUnit(16F, TextUnitType.Sp),
-                    letterSpacing = TextUnit(0.4F, TextUnitType.Sp),
-                )
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Card(

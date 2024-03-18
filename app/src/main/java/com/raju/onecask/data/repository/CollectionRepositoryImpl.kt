@@ -30,6 +30,9 @@ class CollectionRepositoryImpl @Inject constructor(
             database.collectionDao.deleteCollection()
             database.productDao.deleteProduct()
             database.productDetailDao.deleteProductDetail()
+            database.productTastingNoteDao.deleteProductTastingNote()
+            database.productTastingNotesDao.deleteProductTastingNoteList()
+            database.productDetailDao.deleteProductDetail()
             database.collectionDao.insertCollection(datas.map { it.toCollectionEntity() })
 
             database.productDao.insertProduct(datas.mapNotNull { collection ->
