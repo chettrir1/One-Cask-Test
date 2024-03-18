@@ -40,7 +40,6 @@ class CollectionRepositoryImpl @Inject constructor(
                         it.toProductDetailEntity(collection.product.productId)
                     }
                 )
-
             }
 
             datas.map {
