@@ -25,7 +25,6 @@ class CollectionDetailViewModel @Inject constructor(
 
     init {
         savedStateHandle.get<Int>(Constants.PARAM_COLLECTION_ID)?.let { collectionId ->
-            Log.e("PARAM_COLLECTION_ID", collectionId.toString())
             getCollectionDetail(collectionId)
         }
     }

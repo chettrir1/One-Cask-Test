@@ -4,4 +4,7 @@
     <style name="Theme.OneCask" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:windowDisablePreview">true</item>
     </style>
+
+    <style name="Theme.SplashScreen" parent="Theme.OneCask" />
+
 </resources>

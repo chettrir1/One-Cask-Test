@@ -120,6 +120,8 @@ dependencies {
 
     implementation("androidx.activity:activity-compose:1.8.2")
 
+    implementation("androidx.core:core-splashscreen:1.0.0-alpha02")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

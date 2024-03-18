@@ -9,7 +9,7 @@ data class ProductTastingNoteListEntity(
     val tastingNoteId: Int,
     val notesTitle: String,
     val notesDescription: String,
-    @PrimaryKey val notesId: Int? = null
+    @PrimaryKey(autoGenerate = true) val notesId: Int? = null
 )
 
 fun ProductTastingNoteListEntity.toProductTastingNoteList(): ProductTastingNoteListDto {
@@ -22,7 +22,6 @@ fun ProductTastingNoteListEntity.toProductTastingNoteList(): ProductTastingNoteL
 
 fun ProductTastingNoteListDto.toProductNoteListEntity(tastingNoteId: Int): ProductTastingNoteListEntity {
     return ProductTastingNoteListEntity(
-        notesId = noteId,
         notesDescription = noteDescription,
         notesTitle = noteTitle,
         tastingNoteId = tastingNoteId

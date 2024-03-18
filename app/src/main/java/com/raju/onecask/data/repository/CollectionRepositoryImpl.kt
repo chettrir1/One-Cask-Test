@@ -44,7 +44,7 @@ class CollectionRepositoryImpl @Inject constructor(
                         }
                     )
                     database.productTastingNoteDao.insertProductTastingNote(
-                        collection.product!!.tastingNotes.toProductTastingNoteEntity(collection.product!!.productId)
+                        collection.product!!.tastingNotes.toProductTastingNoteEntity(collection.product!!.productId,collection.product!!.tastingNotes.tastingNoteId)
                     )
 
                     database.productTastingNotesDao.insertProductNoteList(collection.product!!.tastingNotes.notes.map {
@@ -74,9 +74,8 @@ class CollectionRepositoryImpl @Inject constructor(
         val detail = database.productDetailDao.getProductDetailByProductId(data.productId ?: -1)
         val note =
             database.productTastingNoteDao.getProductTastingNoteByProductId(data.productId ?: -1)
-//        println()
         val notes =
-            database.productTastingNotesDao.getProductTastingNoteListByTastingNoteId(note.tastingNoteId?:-1)
+            database.productTastingNotesDao.getProductTastingNoteListByTastingNoteId(1)
         return data.toProduct(bottles = bottles, detail, note, notes)
     }
 

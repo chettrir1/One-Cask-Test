@@ -8,7 +8,7 @@ import com.raju.onecask.data.remote.dto.ProductTastingNoteDto
 data class ProductTastingNoteEntity(
     val noteBy: String,
     val productId: Int,
-    @PrimaryKey(autoGenerate = true) val tastingNoteId: Int? = null
+    @PrimaryKey val tastingNoteId:Int
 )
 
 fun ProductTastingNoteEntity.toProductTastingNote(notes: List<ProductTastingNoteListEntity>): ProductTastingNoteDto {
@@ -21,9 +21,10 @@ fun ProductTastingNoteEntity.toProductTastingNote(notes: List<ProductTastingNote
     )
 }
 
-fun ProductTastingNoteDto.toProductTastingNoteEntity(productId: Int): ProductTastingNoteEntity {
+fun ProductTastingNoteDto.toProductTastingNoteEntity(productId: Int,tastingNoteId:Int): ProductTastingNoteEntity {
     return ProductTastingNoteEntity(
         noteBy = noteBy,
-        productId = productId
+        productId = productId,
+        tastingNoteId=tastingNoteId
     )
 }

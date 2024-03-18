@@ -250,9 +250,9 @@ fun Tabs(product: ProductModel?) {
                     )
                 }
                 Spacer(modifier = Modifier.height(12.dp))
-//                state.collection[0].product.details.forEach {
-//                    TestingNotesItem()
-//                }
+                product?.notes?.notes?.forEach {
+                    TestingNotesItem(it)
+                }
                 Spacer(modifier = Modifier.height(16.dp))
             }
 
