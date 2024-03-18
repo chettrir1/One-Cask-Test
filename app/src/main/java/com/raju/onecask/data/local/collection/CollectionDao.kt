@@ -10,7 +10,7 @@ interface CollectionDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCollection(
-        companyListingEntities: List<CollectionEntity>
+        entities: List<CollectionEntity>
     )
 
     @Query("DELETE FROM collection")

@@ -3,7 +3,6 @@ package com.raju.onecask.data.local.collection
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.raju.onecask.data.remote.dto.CollectionDto
-import com.raju.onecask.data.remote.dto.ProductDto
 
 @Entity(tableName = "collection")
 data class CollectionEntity(
@@ -16,8 +15,7 @@ fun CollectionEntity.toCollection(): CollectionDto {
     return CollectionDto(
         id = id ?: -1,
         collectionName = collectionName,
-        bottles = bottles,
-        product = ProductDto("", -1, "", "", "", emptyList())
+        bottles = bottles
     )
 }
 

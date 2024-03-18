@@ -4,6 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.raju.onecask.data.local.product.product_detail.ProductDetailEntity
 import com.raju.onecask.data.local.product.product_detail.toProductDetail
+import com.raju.onecask.data.local.product.product_tasting_note.ProductTastingNoteEntity
+import com.raju.onecask.data.local.product.product_tasting_note.ProductTastingNoteListEntity
+import com.raju.onecask.data.local.product.product_tasting_note.toProductTastingNote
 import com.raju.onecask.data.remote.dto.ProductDto
 
 @Entity(tableName = "product")
@@ -17,7 +20,9 @@ data class ProductEntity(
 
 fun ProductEntity.toProduct(
     bottles: String,
-    detail: List<ProductDetailEntity>
+    detail: List<ProductDetailEntity>,
+    note: ProductTastingNoteEntity,
+    notes: List<ProductTastingNoteListEntity>
 ): ProductDto {
     return ProductDto(
         name = name,
@@ -28,6 +33,7 @@ fun ProductEntity.toProduct(
         details = detail.map {
             it.toProductDetail()
         },
+        tastingNotes = note.toProductTastingNote(notes)
     )
 }
 

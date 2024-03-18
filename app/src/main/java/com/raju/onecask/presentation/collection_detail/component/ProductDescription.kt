@@ -215,7 +215,7 @@ fun Tabs(product: ProductModel?) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "by Charles MacLean MBE",
+                    text = "by ${product?.notes?.noteBy}",
                     fontFamily = FontFamily(Font(R.font.lato)),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.W400,
@@ -224,9 +224,9 @@ fun Tabs(product: ProductModel?) {
                     lineHeight = TextUnit(24F, TextUnitType.Sp),
                 )
                 Spacer(modifier = Modifier.height(12.dp))
-//                state.collection[0].product.details.forEach {
-//                    TestingNotesItem()
-//                }
+                product?.notes?.notes?.forEach {
+                    TestingNotesItem(it)
+                }
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     horizontalArrangement = Arrangement.SpaceBetween,

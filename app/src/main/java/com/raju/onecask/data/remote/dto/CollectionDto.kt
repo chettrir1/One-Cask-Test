@@ -10,7 +10,7 @@ data class CollectionDto(
     val id: Int,
     val collectionName: String,
     val bottles: String,
-    var product: ProductDto
+    var product: ProductDto? = null
 )
 
 data class ProductDto(
@@ -20,6 +20,7 @@ data class ProductDto(
     val age: String,
     val code: String,
     var details: List<ProductDetailDto>,
+    var tastingNotes: ProductTastingNoteDto,
 )
 
 data class ProductDetailDto(
@@ -34,9 +35,9 @@ data class ProductTastingNoteDto(
 )
 
 data class ProductTastingNoteListDto(
-    val notesId: Int,
-    val notesTitle: String,
-    val notesDescription: String
+    val noteId: Int,
+    val noteTitle: String,
+    val noteDescription: String
 )
 
 fun CollectionDto.toCollection(): CollectionModel {
@@ -56,7 +57,8 @@ fun ProductDto.toProduct(): ProductModel {
         bottles = bottles,
         details = details.map {
             it.toProductDetail()
-        }
+        },
+        notes = tastingNotes.toProductNote()
     )
 }
 
@@ -70,7 +72,7 @@ fun ProductDetailDto.toProductDetail(): ProductDetailModel {
 fun ProductTastingNoteDto.toProductNote(): ProductTastingNoteModel {
     return ProductTastingNoteModel(
         noteBy = noteBy,
-        notes = notes?.map {
+        notes = notes.map {
             it.toProductNotes()
         }
     )
@@ -78,8 +80,8 @@ fun ProductTastingNoteDto.toProductNote(): ProductTastingNoteModel {
 
 fun ProductTastingNoteListDto.toProductNotes(): ProductTastingNoteListModel {
     return ProductTastingNoteListModel(
-        notesId = notesId,
-        notesTitle = notesTitle,
-        notesDescription = notesDescription
+        notesId = noteId,
+        notesTitle = noteTitle,
+        notesDescription = noteDescription
     )
 }

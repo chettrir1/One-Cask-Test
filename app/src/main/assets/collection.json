@@ -75,19 +75,19 @@
         "noteBy": "Charles MacLean MBE",
         "notes": [
           {
-            "note_id": 1,
-            "note_title": "Nose",
-            "note_description": "Description\nDescription\nDescription"
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
           },
           {
-            "note_id": 2,
-            "note_title": "Palate",
-            "note_description": "Description\nDescription\nDescription"
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
           },
           {
-            "note_id": 3,
-            "note_title": "Finish",
-            "note_description": "Description\nDescription\nDescription"
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
           }
         ]
       },
@@ -168,6 +168,25 @@
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
       "label": {
       }
@@ -246,6 +265,25 @@
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
       "label": {
       }
@@ -324,6 +362,25 @@
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
       "label": {
       }
@@ -402,6 +459,25 @@
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
       "label": {
       }
@@ -480,6 +556,25 @@
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "noteId": 1,
+            "noteTitle": "Nose",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 2,
+            "noteTitle": "Palate",
+            "noteDescription": "Description\nDescription\nDescription"
+          },
+          {
+            "noteId": 3,
+            "noteTitle": "Finish",
+            "noteDescription": "Description\nDescription\nDescription"
+          }
+        ]
       },
       "label": {
       }

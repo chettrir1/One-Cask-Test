@@ -10,7 +10,7 @@ interface ProductDetailDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertProductDetail(
-        companyListingEntities: List<ProductDetailEntity>
+        entities: List<ProductDetailEntity>
     )
 
     @Query("DELETE FROM product_detail")

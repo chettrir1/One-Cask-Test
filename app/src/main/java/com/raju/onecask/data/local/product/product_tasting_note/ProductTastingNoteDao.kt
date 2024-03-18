@@ -10,10 +10,10 @@ interface ProductTastingNoteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertProductTastingNote(
-        companyListingEntities: List<ProductTastingNoteEntity>
+        entities: ProductTastingNoteEntity
     )
 
-    @Query("DELETE FROM product")
+    @Query("DELETE FROM product_tasting_note")
     suspend fun deleteProductTastingNote()
 
     @Query(
@@ -23,5 +23,5 @@ interface ProductTastingNoteDao {
             WHERE productId=:productId
         """
     )
-    suspend fun getProductByCollectionId(productId: Int): ProductTastingNoteEntity
+    suspend fun getProductTastingNoteByProductId(productId: Int): ProductTastingNoteEntity
 }
