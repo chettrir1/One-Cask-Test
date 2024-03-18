@@ -104,7 +104,7 @@ class MainActivity : ComponentActivity() {
                                 composable(NavItem.Scan.path) { ScanScreen() }
                                 composable(NavItem.Collection.path) {
                                     CollectionScreen(onItemClick = {
-                                        start(context = this@MainActivity)
+                                        start(context = this@MainActivity, it)
                                     })
                                 }
                                 composable(NavItem.Shop.path) { ShopScreen() }

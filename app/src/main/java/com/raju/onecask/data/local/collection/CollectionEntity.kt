@@ -17,7 +17,7 @@ fun CollectionEntity.toCollection(): CollectionDto {
         id = id ?: -1,
         collectionName = collectionName,
         bottles = bottles,
-        product = ProductDto(-1, "", "", "")
+        product = ProductDto("", -1, "", "", "", emptyList())
     )
 }
 

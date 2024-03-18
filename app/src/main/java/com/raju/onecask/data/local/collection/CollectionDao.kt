@@ -23,4 +23,13 @@ interface CollectionDao {
         """
     )
     suspend fun getCollection(): List<CollectionEntity>
+
+    @Query(
+        """
+            SELECT bottles
+            FROM collection
+            WHERE id=:collectionId
+        """
+    )
+    suspend fun getBottlesByCollectionId(collectionId: Int): String
 }

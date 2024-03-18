@@ -12,11 +12,12 @@ data class CollectionDto(
 )
 
 data class ProductDto(
+    val bottles: String,
     val productId: Int,
     val name: String,
     val age: String,
     val code: String,
-    var details: List<ProductDetailDto>? = null
+    var details: List<ProductDetailDto>
 )
 
 data class ProductDetailDto(
@@ -28,8 +29,7 @@ fun CollectionDto.toCollection(): CollectionModel {
     return CollectionModel(
         id = id,
         collectionName = collectionName,
-        bottles = bottles,
-        product = product?.toProduct()
+        bottles = bottles
     )
 }
 
@@ -39,7 +39,8 @@ fun ProductDto.toProduct(): ProductModel {
         name = name,
         age = age,
         code = code,
-        details = details?.map {
+        bottles = bottles,
+        details = details.map {
             it.toProductDetail()
         }
     )

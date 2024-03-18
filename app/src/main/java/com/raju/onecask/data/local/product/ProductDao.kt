@@ -23,5 +23,5 @@ interface ProductDao {
             WHERE collectionId=:collectionId
         """
     )
-    suspend fun getProductByCollectionId(collectionId: Int): List<ProductEntity>
+    suspend fun getProductByCollectionId(collectionId: Int): ProductEntity
 }

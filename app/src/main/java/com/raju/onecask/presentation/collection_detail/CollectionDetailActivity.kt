@@ -30,17 +30,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import com.raju.onecask.R
+import com.raju.onecask.common.Constants
 import com.raju.onecask.ui.theme.COLOR_0a1f29
 import com.raju.onecask.ui.theme.COLOR_E7E9EA
 import com.raju.onecask.ui.theme.OneCaskTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-fun start(context: Context) {
-    context.startActivity(createDetailsActivityIntent(context))
+fun start(context: Context, collectionId: Int) {
+    context.startActivity(createDetailsActivityIntent(context, collectionId))
 }
 
-fun createDetailsActivityIntent(context: Context): Intent {
-    return Intent(context, CollectionDetailActivity::class.java)
+fun createDetailsActivityIntent(context: Context, collectionId: Int): Intent {
+    val intent = Intent(context, CollectionDetailActivity::class.java)
+    intent.putExtra(Constants.PARAM_COLLECTION_ID, collectionId)
+    return intent
 }
 
 @AndroidEntryPoint

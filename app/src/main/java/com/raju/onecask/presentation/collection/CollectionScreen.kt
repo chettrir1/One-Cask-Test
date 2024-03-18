@@ -26,7 +26,7 @@ import com.raju.onecask.ui.theme.COLOR_E7E9EA
 
 @Composable
 fun CollectionScreen(
-    onItemClick: () -> Unit,
+    onItemClick: (Int) -> Unit,
     viewModel: CollectionViewModel = hiltViewModel()
 ) {
 
@@ -47,7 +47,7 @@ fun CollectionScreen(
             ) {
                 items(state.collection) { collection ->
                     CollectionItem(collection = collection, onItemClick = {
-                        onItemClick()
+                        onItemClick(it.id)
                     })
                 }
             }

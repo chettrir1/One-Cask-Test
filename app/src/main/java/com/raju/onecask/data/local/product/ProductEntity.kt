@@ -2,6 +2,8 @@ package com.raju.onecask.data.local.product
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.raju.onecask.data.local.product_detail.ProductDetailEntity
+import com.raju.onecask.data.local.product_detail.toProductDetail
 import com.raju.onecask.data.remote.dto.ProductDto
 
 @Entity(tableName = "product")
@@ -13,12 +15,17 @@ data class ProductEntity(
     @PrimaryKey val productId: Int? = null
 )
 
-fun ProductEntity.toProduct(): ProductDto {
+fun ProductEntity.toProduct(bottles: String, detail: List<ProductDetailEntity>): ProductDto {
     return ProductDto(
         name = name,
         age = age,
         code = code,
-        productId = productId ?: -1
+        productId = productId ?: -1,
+        bottles = bottles,
+        details = detail.map {
+            it.toProductDetail()
+        }
+
     )
 }
 

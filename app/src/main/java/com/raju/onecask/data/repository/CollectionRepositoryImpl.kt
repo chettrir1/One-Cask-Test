@@ -6,9 +6,12 @@ import com.google.gson.reflect.TypeToken
 import com.raju.onecask.data.local.OneCaskDatabase
 import com.raju.onecask.data.local.collection.toCollection
 import com.raju.onecask.data.local.collection.toCollectionEntity
+import com.raju.onecask.data.local.product.toProduct
 import com.raju.onecask.data.local.product.toProductEntity
+import com.raju.onecask.data.local.product_detail.toProductDetailEntity
 import com.raju.onecask.data.remote.OneCaskApi
 import com.raju.onecask.data.remote.dto.CollectionDto
+import com.raju.onecask.data.remote.dto.ProductDto
 import com.raju.onecask.domain.repository.CollectionRepository
 import javax.inject.Inject
 
@@ -24,14 +27,21 @@ class CollectionRepositoryImpl @Inject constructor(
         response.let { datas ->
             database.collectionDao.deleteCollection()
             database.productDao.deleteProduct()
-            database.collectionDao.insertCollection(
-                datas.map { it.toCollectionEntity() }
-            )
-            database.productDao.insertProduct(
-                datas.map { collection ->
-                    collection.product.toProductEntity(collection.id)
-                }
-            )
+            database.productDetailDao.deleteProductDetail()
+            database.collectionDao.insertCollection(datas.map { it.toCollectionEntity() })
+
+            database.productDao.insertProduct(datas.map { collection ->
+                collection.product.toProductEntity(collection.id)
+            })
+
+            datas.forEach { collection ->
+                database.productDetailDao.insertProductDetail(
+                    collection.product.details.map {
+                        it.toProductDetailEntity(collection.product.productId)
+                    }
+                )
+            }
+
             datas.map {
                 it.toCollectionEntity()
             }
@@ -45,6 +55,15 @@ class CollectionRepositoryImpl @Inject constructor(
             it.toCollection()
         }
     }
+
+    override suspend fun getProduct(collectionId: Int): ProductDto {
+        val bottles = database.collectionDao.getBottlesByCollectionId(collectionId = collectionId)
+        val data = database.productDao.getProductByCollectionId(collectionId = collectionId)
+
+        val detail = database.productDetailDao.getProductDetailByProductId(data.productId ?: -1)
+        return data.toProduct(bottles = bottles, detail)
+    }
+
 
     private fun readJsonFromAssets(): String {
         return application.assets.open("collection.json").bufferedReader().use { it.readText() }

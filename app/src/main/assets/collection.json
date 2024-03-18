@@ -10,50 +10,62 @@
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
@@ -66,60 +78,72 @@
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 2,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 2,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
@@ -132,60 +156,72 @@
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 3,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 3,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
@@ -198,60 +234,72 @@
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 4,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 4,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
@@ -264,60 +312,72 @@
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 5,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 5,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
@@ -330,60 +390,72 @@
     "name": "Talisker 18 Year old #2504"
   },
   {
-    "id": 1,
+    "id": 6,
     "collectionName": "Springbank 1992 #1234",
     "bottles": "(112/158)",
     "product": {
-      "productId": 1,
+      "productId": 6,
       "name": "Talisker",
       "age": "18 Year old",
       "code": "#2504",
       "details": [
         {
+          "detail_id": 1,
           "title": "Distillery",
           "value": "Text"
         },
         {
+          "detail_id": 2,
           "title": "Region",
           "value": "Text"
         },
         {
+          "detail_id": 3,
           "title": "Country",
           "value": "Text"
         },
         {
+          "detail_id": 4,
           "title": "Type",
           "value": "Text"
         },
         {
+          "detail_id": 5,
           "title": "Age statement",
           "value": "Text"
         },
         {
+          "detail_id": 6,
           "title": "Filled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Bottled",
           "value": "Text"
         },
         {
+          "detail_id": 7,
           "title": "Cask number",
           "value": "Text"
         },
         {
+          "detail_id": 8,
           "title": "ABV",
           "value": "Text"
         },
         {
+          "detail_id": 9,
           "title": "Size",
           "value": "Text"
         },
         {
+          "detail_id": 10,
           "title": "Finish",
           "value": "Text"
         },
         {
+          "detail_id": 11,
           "title": "Finish",
           "value": "Text"
         }
