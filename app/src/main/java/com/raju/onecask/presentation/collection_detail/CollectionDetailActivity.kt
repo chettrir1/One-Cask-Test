@@ -65,6 +65,7 @@ class CollectionDetailActivity : ComponentActivity() {
             )
         )
         super.onCreate(savedInstanceState)
+actionBar?.hide()
         setContent {
             OneCaskTheme {
                 Surface {

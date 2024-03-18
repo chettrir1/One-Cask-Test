@@ -30,7 +30,7 @@ fun BottomNavigationBar(
     onItemClick: (Int) -> Unit
 ) {
     val navItems = listOf(NavItem.Scan, NavItem.Collection, NavItem.Shop, NavItem.Setting)
-    var selectedItem by rememberSaveable { mutableIntStateOf(0) }
+    var selectedItem by rememberSaveable { mutableIntStateOf(1) }
     NavigationBar(containerColor = COLOR_0B1519) {
         navItems.forEachIndexed { index, item ->
             NavigationBarItem(

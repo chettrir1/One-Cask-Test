@@ -31,14 +31,14 @@ import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.raju.onecask.R
+import com.raju.onecask.domain.model.ProductLabelModel
 import com.raju.onecask.ui.theme.COLOR_0B1519
 import com.raju.onecask.ui.theme.COLOR_D49A00
 import com.raju.onecask.ui.theme.COLOR_E7E9EA
 import com.raju.onecask.ui.theme.COLOR_FFFFFF
 
 @Composable
-fun HistoryItem(
-) {
+fun HistoryItem(model: ProductLabelModel) {
     Box(
         modifier = Modifier.padding(horizontal = 8.dp)
     ) {
@@ -86,7 +86,7 @@ fun HistoryItem(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    "Title",
+                    model.title,
                     fontFamily = FontFamily(Font(R.font.eb_garamond)),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.W500,
@@ -95,7 +95,7 @@ fun HistoryItem(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    "Description",
+                    model.description,
                     fontFamily = FontFamily(Font(R.font.lato)),
                     fontSize = 12.sp,
                     fontWeight = FontWeight.W400,

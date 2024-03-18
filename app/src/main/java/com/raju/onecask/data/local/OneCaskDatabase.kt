@@ -4,6 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.raju.onecask.data.local.collection.CollectionDao
 import com.raju.onecask.data.local.collection.CollectionEntity
+import com.raju.onecask.data.local.label.ProductLabelDao
+import com.raju.onecask.data.local.label.ProductLabelEntity
 import com.raju.onecask.data.local.product.ProductDao
 import com.raju.onecask.data.local.product.ProductEntity
 import com.raju.onecask.data.local.product.product_detail.ProductDetailDao
@@ -19,7 +21,8 @@ import com.raju.onecask.data.local.product.product_tasting_note.ProductTestNoteL
         ProductEntity::class,
         ProductDetailEntity::class,
         ProductTastingNoteEntity::class,
-        ProductTastingNoteListEntity::class],
+        ProductTastingNoteListEntity::class,
+        ProductLabelEntity::class],
     version = 1
 )
 abstract class OneCaskDatabase : RoomDatabase() {
@@ -28,4 +31,5 @@ abstract class OneCaskDatabase : RoomDatabase() {
     abstract val productDetailDao: ProductDetailDao
     abstract val productTastingNoteDao: ProductTastingNoteDao
     abstract val productTastingNotesDao: ProductTestNoteListDao
+    abstract val productLabelDao: ProductLabelDao
 }

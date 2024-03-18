@@ -110,17 +110,18 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.46")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
+    /*Compose Ui*/
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
 
-    /*swipe refresh*/
+    /*Swipe Refresh*/
     implementation("com.google.accompanist:accompanist-swiperefresh:0.24.2-alpha")
 
     implementation("androidx.activity:activity-compose:1.8.2")
 
-    implementation("androidx.core:core-splashscreen:1.0.0-alpha02")
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

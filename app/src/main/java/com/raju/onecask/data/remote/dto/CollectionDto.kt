@@ -2,6 +2,7 @@ package com.raju.onecask.data.remote.dto
 
 import com.raju.onecask.domain.model.CollectionModel
 import com.raju.onecask.domain.model.ProductDetailModel
+import com.raju.onecask.domain.model.ProductLabelModel
 import com.raju.onecask.domain.model.ProductModel
 import com.raju.onecask.domain.model.ProductTastingNoteListModel
 import com.raju.onecask.domain.model.ProductTastingNoteModel
@@ -21,6 +22,7 @@ data class ProductDto(
     val code: String,
     var details: List<ProductDetailDto>,
     var tastingNotes: ProductTastingNoteDto,
+    var label: List<ProductLabelDto>
 )
 
 data class ProductDetailDto(
@@ -38,6 +40,11 @@ data class ProductTastingNoteListDto(
     val noteId: Int,
     val noteTitle: String,
     val noteDescription: String
+)
+
+data class ProductLabelDto(
+    val title: String,
+    val description: String
 )
 
 fun CollectionDto.toCollection(): CollectionModel {
@@ -58,7 +65,10 @@ fun ProductDto.toProduct(): ProductModel {
         details = details.map {
             it.toProductDetail()
         },
-        notes = tastingNotes.toProductNote()
+        notes = tastingNotes.toProductNote(),
+        label = label.map {
+            it.toProductLabel()
+        }
     )
 }
 
@@ -83,5 +93,12 @@ fun ProductTastingNoteListDto.toProductNotes(): ProductTastingNoteListModel {
         notesId = noteId,
         notesTitle = noteTitle,
         notesDescription = noteDescription
+    )
+}
+
+fun ProductLabelDto.toProductLabel(): ProductLabelModel {
+    return ProductLabelModel(
+        title = title,
+        description = description
     )
 }

@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 import com.raju.onecask.data.local.OneCaskDatabase
 import com.raju.onecask.data.local.collection.toCollection
 import com.raju.onecask.data.local.collection.toCollectionEntity
+import com.raju.onecask.data.local.label.toProductLabelEntity
 import com.raju.onecask.data.local.product.product_detail.toProductDetailEntity
 import com.raju.onecask.data.local.product.product_tasting_note.toProductNoteListEntity
 import com.raju.onecask.data.local.product.product_tasting_note.toProductTastingNoteEntity
@@ -33,6 +34,7 @@ class CollectionRepositoryImpl @Inject constructor(
             database.productTastingNoteDao.deleteProductTastingNote()
             database.productTastingNotesDao.deleteProductTastingNoteList()
             database.productDetailDao.deleteProductDetail()
+            database.productLabelDao.deleteProductLabel()
             database.collectionDao.insertCollection(datas.map { it.toCollectionEntity() })
 
             database.productDao.insertProduct(datas.mapNotNull { collection ->
@@ -47,12 +49,21 @@ class CollectionRepositoryImpl @Inject constructor(
                         }
                     )
                     database.productTastingNoteDao.insertProductTastingNote(
-                        collection.product!!.tastingNotes.toProductTastingNoteEntity(collection.product!!.productId,collection.product!!.tastingNotes.tastingNoteId)
+                        collection.product!!.tastingNotes.toProductTastingNoteEntity(
+                            collection.product!!.productId,
+                            collection.product!!.tastingNotes.tastingNoteId
+                        )
                     )
 
                     database.productTastingNotesDao.insertProductNoteList(collection.product!!.tastingNotes.notes.map {
                         it.toProductNoteListEntity(collection.product!!.tastingNotes.tastingNoteId)
                     })
+
+                    database.productLabelDao.insertProductLabel(
+                        collection.product!!.label.map {
+                            it.toProductLabelEntity(collection.product!!.productId)
+                        }
+                    )
                 }
             }
 
@@ -79,7 +90,9 @@ class CollectionRepositoryImpl @Inject constructor(
             database.productTastingNoteDao.getProductTastingNoteByProductId(data.productId ?: -1)
         val notes =
             database.productTastingNotesDao.getProductTastingNoteListByTastingNoteId(1)
-        return data.toProduct(bottles = bottles, detail, note, notes)
+        val label = database.productLabelDao.getProductLabelByLabelId(data.productId ?: -1)
+
+        return data.toProduct(bottles = bottles, detail, note, notes, label)
     }
 
 

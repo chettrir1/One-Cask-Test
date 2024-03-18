@@ -13,7 +13,8 @@ data class ProductModel(
     val code: String,
     val bottles: String,
     val details: List<ProductDetailModel>? = null,
-    val notes: ProductTastingNoteModel
+    val notes: ProductTastingNoteModel,
+    val label: List<ProductLabelModel>
 )
 
 data class ProductDetailModel(
@@ -30,4 +31,9 @@ data class ProductTastingNoteListModel(
     val notesId: Int,
     val notesTitle: String,
     val notesDescription: String
+)
+
+data class ProductLabelModel(
+    val title: String,
+    val description: String
 )

@@ -70,8 +70,9 @@ class MainActivity : ComponentActivity() {
             )
         )
         super.onCreate(savedInstanceState)
+        actionBar?.hide()
         installSplashScreen().apply {
-            setKeepVisibleCondition {
+            setKeepOnScreenCondition {
                 viewModel.isLoading.value
             }
         }
@@ -81,7 +82,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                 ) {
-                    var selectedNav by remember { mutableIntStateOf(0) }
+                    var selectedNav by remember { mutableIntStateOf(1) }
                     Scaffold(
 
                         topBar = {
@@ -138,7 +139,9 @@ class MainActivity : ComponentActivity() {
                         },
                     ) { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
-                            NavHost(navController, startDestination = NavItem.Scan.path) {
+                            NavHost(
+                                navController, startDestination = NavItem.Collection.path
+                            ) {
                                 composable(NavItem.Scan.path) { ScanScreen() }
                                 composable(NavItem.Collection.path) {
                                     CollectionScreen(onItemClick = {

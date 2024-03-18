@@ -1,8 +1,12 @@
 package com.raju.onecask.presentation.collection
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -128,20 +132,37 @@ fun CollectionScreen(
             }
         }
         if (state.error.isNotBlank()) {
-            Text(
-                text = state.error,
-                color = COLOR_E7E9EA,
-                textAlign = TextAlign.Center,
-                fontFamily = FontFamily(Font(R.font.eb_garamond)),
-                fontSize = 22.sp,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp)
-                    .align(Alignment.Center),
-            )
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text(
+                    text = "Error Occured!",
+                    color = COLOR_E7E9EA,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily(Font(R.font.eb_garamond)),
+                    fontSize = 22.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp)
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = state.error,
+                    color = COLOR_E7E9EA,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily(Font(R.font.eb_garamond)),
+                    fontSize = 16.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp)
+                )
+            }
         }
         if (state.isLoading) {
             CircularProgressIndicator(
+                color = COLOR_E7E9EA,
                 modifier = Modifier.align(Alignment.Center)
             )
         }

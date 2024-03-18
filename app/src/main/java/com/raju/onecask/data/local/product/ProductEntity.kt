@@ -2,6 +2,8 @@ package com.raju.onecask.data.local.product
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.raju.onecask.data.local.label.ProductLabelEntity
+import com.raju.onecask.data.local.label.toProductLabel
 import com.raju.onecask.data.local.product.product_detail.ProductDetailEntity
 import com.raju.onecask.data.local.product.product_detail.toProductDetail
 import com.raju.onecask.data.local.product.product_tasting_note.ProductTastingNoteEntity
@@ -22,7 +24,8 @@ fun ProductEntity.toProduct(
     bottles: String,
     detail: List<ProductDetailEntity>,
     note: ProductTastingNoteEntity,
-    notes: List<ProductTastingNoteListEntity>
+    notes: List<ProductTastingNoteListEntity>,
+    label: List<ProductLabelEntity>
 ): ProductDto {
     return ProductDto(
         name = name,
@@ -33,7 +36,10 @@ fun ProductEntity.toProduct(
         details = detail.map {
             it.toProductDetail()
         },
-        tastingNotes = note.toProductTastingNote(notes)
+        tastingNotes = note.toProductTastingNote(notes),
+        label = label.map {
+            it.toProductLabel()
+        }
     )
 }
 

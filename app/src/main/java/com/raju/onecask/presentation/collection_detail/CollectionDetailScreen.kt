@@ -31,7 +31,7 @@ fun CollectionDetailScreen(
     viewModel: CollectionDetailViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-    Box(modifier = modifier) {
+    Box(modifier = modifier.fillMaxSize()) {
         state.product.let { product ->
             LazyColumn(
                 modifier = Modifier

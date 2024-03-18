@@ -177,6 +177,7 @@ fun Tabs(product: ProductModel?) {
     }
     HorizontalPager(
         state = pagerState,
+        verticalAlignment = Alignment.Top,
         modifier = Modifier
             .fillMaxWidth()
     ) { index ->
@@ -260,9 +261,9 @@ fun Tabs(product: ProductModel?) {
                 modifier = Modifier
                     .padding(vertical = 16.dp)
             ) {
-                for (i in 1..3) {
-                    HistoryItem()
-                }
+               product?.label?.forEach {
+                   HistoryItem(it)
+               }
             }
 
         }
