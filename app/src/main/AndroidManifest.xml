@@ -15,7 +15,7 @@
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.App.Starting">
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.collection_detail.CollectionDetailActivity"
+            android:name=".presentation.main.collection_detail.CollectionDetailActivity"
             android:exported="true" />
     </application>
 
