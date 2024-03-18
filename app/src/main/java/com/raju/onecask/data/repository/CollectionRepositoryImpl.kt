@@ -6,9 +6,9 @@ import com.google.gson.reflect.TypeToken
 import com.raju.onecask.data.local.OneCaskDatabase
 import com.raju.onecask.data.local.collection.toCollection
 import com.raju.onecask.data.local.collection.toCollectionEntity
+import com.raju.onecask.data.local.product.product_detail.toProductDetailEntity
 import com.raju.onecask.data.local.product.toProduct
 import com.raju.onecask.data.local.product.toProductEntity
-import com.raju.onecask.data.local.product_detail.toProductDetailEntity
 import com.raju.onecask.data.remote.OneCaskApi
 import com.raju.onecask.data.remote.dto.CollectionDto
 import com.raju.onecask.data.remote.dto.ProductDto
@@ -40,6 +40,7 @@ class CollectionRepositoryImpl @Inject constructor(
                         it.toProductDetailEntity(collection.product.productId)
                     }
                 )
+
             }
 
             datas.map {

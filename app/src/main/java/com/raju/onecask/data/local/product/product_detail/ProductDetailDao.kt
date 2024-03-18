@@ -1,4 +1,4 @@
-package com.raju.onecask.data.local.product_detail
+package com.raju.onecask.data.local.product.product_detail
 
 import androidx.room.Dao
 import androidx.room.Insert

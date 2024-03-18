@@ -7,7 +7,7 @@
       "productId": 1,
       "name": "Talisker",
       "age": "18 Year old",
-      "code": "#2504",
+      "code": "#2501",
       "details": [
         {
           "detail_id": 1,
@@ -71,6 +71,25 @@
         }
       ],
       "tastingNotes": {
+        "tastingNoteId": 1,
+        "noteBy": "Charles MacLean MBE",
+        "notes": [
+          {
+            "note_id": 1,
+            "note_title": "Nose",
+            "note_description": "Description\nDescription\nDescription"
+          },
+          {
+            "note_id": 2,
+            "note_title": "Palate",
+            "note_description": "Description\nDescription\nDescription"
+          },
+          {
+            "note_id": 3,
+            "note_title": "Finish",
+            "note_description": "Description\nDescription\nDescription"
+          }
+        ]
       },
       "label": {
       }
@@ -85,7 +104,7 @@
       "productId": 2,
       "name": "Talisker",
       "age": "18 Year old",
-      "code": "#2504",
+      "code": "#2502",
       "details": [
         {
           "detail_id": 1,
@@ -163,7 +182,7 @@
       "productId": 3,
       "name": "Talisker",
       "age": "18 Year old",
-      "code": "#2504",
+      "code": "#2503",
       "details": [
         {
           "detail_id": 1,

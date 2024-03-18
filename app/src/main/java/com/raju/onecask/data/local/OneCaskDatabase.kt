@@ -6,8 +6,8 @@ import com.raju.onecask.data.local.collection.CollectionDao
 import com.raju.onecask.data.local.collection.CollectionEntity
 import com.raju.onecask.data.local.product.ProductDao
 import com.raju.onecask.data.local.product.ProductEntity
-import com.raju.onecask.data.local.product_detail.ProductDetailDao
-import com.raju.onecask.data.local.product_detail.ProductDetailEntity
+import com.raju.onecask.data.local.product.product_detail.ProductDetailDao
+import com.raju.onecask.data.local.product.product_detail.ProductDetailEntity
 
 @Database(
     entities = [

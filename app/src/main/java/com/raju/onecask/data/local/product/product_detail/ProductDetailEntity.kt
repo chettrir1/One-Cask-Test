@@ -1,4 +1,4 @@
-package com.raju.onecask.data.local.product_detail
+package com.raju.onecask.data.local.product.product_detail
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -19,9 +19,9 @@ fun ProductDetailEntity.toProductDetail(): ProductDetailDto {
     )
 }
 
-fun ProductDetailDto.toProductDetailEntity(producId: Int): ProductDetailEntity {
+fun ProductDetailDto.toProductDetailEntity(productId: Int): ProductDetailEntity {
     return ProductDetailEntity(
-        productId = producId,
+        productId = productId,
         title = title,
         value = value
     )

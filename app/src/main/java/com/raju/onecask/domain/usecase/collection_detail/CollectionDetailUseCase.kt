@@ -16,7 +16,6 @@ class CollectionDetailUseCase @Inject constructor(private val repository: Collec
         try {
             emit(Resource.Loading())
             val product = repository.getProduct(collectionId).toProduct()
-
             emit(Resource.Success(product))
 
         } catch (e: HttpException) {
