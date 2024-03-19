@@ -41,7 +41,7 @@ import androidx.navigation.compose.rememberNavController
 import com.raju.onecask.R
 import com.raju.onecask.presentation.bottom_nav.NavItem
 import com.raju.onecask.presentation.collection.CollectionScreen
-import com.raju.onecask.presentation.collection_detail.start
+import com.raju.onecask.presentation.collection_detail.startCollectionDetailActivity
 import com.raju.onecask.presentation.scan.ScanScreen
 import com.raju.onecask.presentation.setting.SettingScreen
 import com.raju.onecask.presentation.shop.ShopScreen
@@ -148,12 +148,32 @@ class MainActivity : ComponentActivity() {
                     ) { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
                             NavHost(
-                                navController, startDestination = NavItem.Collection.path
+                                navController,
+                                startDestination = when (selectedNav) {
+                                    0 -> {
+                                        NavItem.Scan.path
+                                    }
+
+                                    1 -> {
+                                        NavItem.Collection.path
+                                    }
+
+                                    2 -> {
+                                        NavItem.Shop.path
+                                    }
+
+                                    else -> {
+                                        NavItem.Setting.path
+                                    }
+                                },
                             ) {
                                 composable(NavItem.Scan.path) { ScanScreen() }
                                 composable(NavItem.Collection.path) {
                                     CollectionScreen(onItemClick = {
-                                        start(context = this@MainActivity, it)
+                                        startCollectionDetailActivity(
+                                            context = this@MainActivity,
+                                            it
+                                        )
                                     })
                                 }
                                 composable(NavItem.Shop.path) { ShopScreen() }

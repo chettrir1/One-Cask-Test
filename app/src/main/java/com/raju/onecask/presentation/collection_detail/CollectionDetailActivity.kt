@@ -36,7 +36,7 @@ import com.raju.onecask.ui.theme.COLOR_E7E9EA
 import com.raju.onecask.ui.theme.OneCaskTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-fun start(context: Context, collectionId: Int) {
+fun startCollectionDetailActivity(context: Context, collectionId: Int) {
     context.startActivity(createDetailsActivityIntent(context, collectionId))
 }
 

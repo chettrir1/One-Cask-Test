@@ -50,7 +50,6 @@ import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.raju.onecask.R
 import com.raju.onecask.presentation.MainViewModel
 import com.raju.onecask.presentation.startMainActivity
@@ -63,7 +62,7 @@ import com.raju.onecask.ui.theme.COLOR_FFB901
 import com.raju.onecask.ui.theme.OneCaskTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-fun start(context: Context) {
+fun startLoginActivity(context: Context) {
     context.startActivity(loginActivityIntent(context))
 }
 
@@ -95,11 +94,6 @@ class LoginActivity : ComponentActivity() {
         )
         super.onCreate(savedInstanceState)
         actionBar?.hide()
-        installSplashScreen().apply {
-            setKeepOnScreenCondition {
-                viewModel.isLoading.value
-            }
-        }
         setContent {
             OneCaskTheme {
                 Surface {
@@ -113,7 +107,9 @@ class LoginActivity : ComponentActivity() {
                                 title = {
                                 },
                                 navigationIcon = {
-                                    IconButton(onClick = {}) {
+                                    IconButton(onClick = {
+                                        onBackPressedDispatcher.onBackPressed()
+                                    }) {
                                         Icon(
                                             painterResource(id = R.drawable.ic_arrow_left),
                                             contentDescription = null

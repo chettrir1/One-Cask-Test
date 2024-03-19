@@ -59,7 +59,8 @@ fun CollectionScreen(
         var dialogState by remember { mutableStateOf(false) }
         var networkState by remember { mutableStateOf(false) }
 
-        networkState = checkNetworkAvailability(LocalContext.current)
+        val context = LocalContext.current
+        networkState = checkNetworkAvailability(context)
 
         if (!networkState) {
             dialogState = true
@@ -102,7 +103,7 @@ fun CollectionScreen(
                             dialogState = false
                         }) {
                         Text(
-                            "Refresh",
+                            "Cancel",
                             fontFamily = FontFamily(Font(R.font.eb_garamond)),
                             fontWeight = FontWeight.W600,
                             color = COLOR_0B1519,
@@ -168,3 +169,4 @@ fun CollectionScreen(
         }
     }
 }
+

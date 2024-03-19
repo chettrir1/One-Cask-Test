@@ -1,8 +1,12 @@
 package com.raju.onecask.utils
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.net.Uri
+import android.provider.Settings
+import androidx.compose.runtime.Composable
 
 fun checkNetworkAvailability(context: Context): Boolean {
     val connectivityManager =
