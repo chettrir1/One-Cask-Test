@@ -1,6 +1,5 @@
 package com.raju.onecask.presentation.collection_detail
 
-import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
@@ -40,6 +39,7 @@ class CollectionDetailViewModel @Inject constructor(
 
                 is Resource.Success -> {
                     _state.value = CollectionDetailState(product = result.data)
+
                 }
 
                 is Resource.Error -> {

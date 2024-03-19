@@ -3,6 +3,7 @@
 package com.raju.onecask.presentation.collection_detail
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Spacer
@@ -24,6 +25,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.raju.onecask.R
 import com.raju.onecask.presentation.collection_detail.component.GenuineDropDown
 import com.raju.onecask.presentation.collection_detail.component.ProductDescription
+import com.raju.onecask.ui.theme.COLOR_0a1f29
+import com.raju.onecask.ui.theme.COLOR_E7E9EA
 
 @Composable
 fun CollectionDetailScreen(
@@ -66,9 +69,14 @@ fun CollectionDetailScreen(
             )
         }
         if (state.isLoading) {
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center)
-            )
+            Box(modifier = Modifier
+                .fillMaxSize()
+                .background(COLOR_0a1f29)) {
+                CircularProgressIndicator(
+                    color = COLOR_E7E9EA,
+                    modifier = Modifier.align(Alignment.Center)
+                )
+            }
         }
     }
 }

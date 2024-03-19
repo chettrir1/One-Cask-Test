@@ -1,5 +1,7 @@
 package com.raju.onecask.presentation
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -33,7 +35,6 @@ import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -48,6 +49,18 @@ import com.raju.onecask.ui.theme.COLOR_0a1f29
 import com.raju.onecask.ui.theme.COLOR_E7E9EA
 import com.raju.onecask.ui.theme.OneCaskTheme
 import dagger.hilt.android.AndroidEntryPoint
+
+fun startMainActivity(activity: Activity) {
+    activity.startActivity(mainActivityIntent(activity))
+    activity.finish()
+}
+
+fun mainActivityIntent(context: Activity): Intent {
+    val intent = Intent(context, MainActivity::class.java)
+    intent.flags =
+        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+    return intent
+}
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -71,11 +84,6 @@ class MainActivity : ComponentActivity() {
         )
         super.onCreate(savedInstanceState)
         actionBar?.hide()
-        installSplashScreen().apply {
-            setKeepOnScreenCondition {
-                viewModel.isLoading.value
-            }
-        }
         setContent {
             OneCaskTheme {
                 val navController = rememberNavController()
