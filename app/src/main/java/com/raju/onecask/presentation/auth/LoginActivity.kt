@@ -120,6 +120,9 @@ class LoginActivity : ComponentActivity() {
                         },
                     ) { innerPadding ->
                         var showPassword by remember { mutableStateOf(false) }
+                        var emailText by remember { mutableStateOf("email@email.com") }
+                        var passwordText by remember { mutableStateOf("password") }
+
                         LazyColumn(
                             modifier = Modifier
                                 .fillMaxSize()
@@ -155,7 +158,7 @@ class LoginActivity : ComponentActivity() {
                                         )
                                     },
                                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                                    value = "email@email.com",
+                                    value = emailText,
                                     textStyle = TextStyle(
                                         fontFamily = FontFamily(Font(R.font.lato)),
                                         fontSize = 16.sp,
@@ -165,6 +168,7 @@ class LoginActivity : ComponentActivity() {
                                         lineHeight = TextUnit(24F, TextUnitType.Sp),
                                     ),
                                     onValueChange = {
+                                        emailText = it
                                     },
                                     colors = TextFieldDefaults.textFieldColors(
                                         containerColor = Color.Transparent,
@@ -196,14 +200,24 @@ class LoginActivity : ComponentActivity() {
                                     trailingIcon = {
                                         if (showPassword) {
                                             IconButton(onClick = { showPassword = false }) {
+                                                Icon(
+                                                    painterResource(id = R.drawable.ic_eye),
+                                                    contentDescription = null,
+                                                    tint = COLOR_D49A00
+                                                )
                                             }
                                         } else {
                                             IconButton(onClick = { showPassword = true }) {
+                                                Icon(
+                                                    painterResource(id = R.drawable.ic_eye),
+                                                    contentDescription = null,
+                                                    tint = COLOR_D49A00
+                                                )
                                             }
                                         }
                                     },
                                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                                    value = "12341241241242",
+                                    value = passwordText,
                                     textStyle = TextStyle(
                                         fontFamily = FontFamily(Font(R.font.lato)),
                                         fontSize = 16.sp,
@@ -213,6 +227,7 @@ class LoginActivity : ComponentActivity() {
                                         lineHeight = TextUnit(24F, TextUnitType.Sp),
                                     ),
                                     onValueChange = {
+                                        passwordText = it
                                     },
                                     colors = TextFieldDefaults.textFieldColors(
                                         containerColor = Color.Transparent,
